@@ -7,8 +7,7 @@ from torch.utils.data import DataLoader
 def create_dataloaders(train_dir: str,
                        test_dir: str,
                        transform: transforms.Compose,
-                       batch_size: int,
-                       num_worker: int=os.cpu_count()):
+                       batch_size: int):
     """Takes in a training directory and testing directory path and turns them into PyTorch DataSets and then into PyTorch DataLoaders.
 
     Args:
@@ -41,13 +40,13 @@ def create_dataloaders(train_dir: str,
     train_dataloader = DataLoader(dataset=train_data,
                                   batch_size=batch_size,
                                   shuffle=True,
-                                  num_workers=num_worker,
+                                #   num_workers=num_worker,
                                   pin_memory=True)
     
     test_dataloader = DataLoader(dataset=test_data,
                                 batch_size=batch_size,
                                 shuffle=False,
-                                num_workers=num_worker,
+                                # num_workers=num_worker,
                                 pin_memory=True)
 
     return train_dataloader, test_dataloader, class_names
