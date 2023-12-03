@@ -3,3 +3,4 @@ exercises
 *.pyc
 data
 runs
+models
