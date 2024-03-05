@@ -4,3 +4,8 @@ exercises
 data
 runs
 models
+food101
+*.zip
+cifar*
+demos
+.devcontainer
